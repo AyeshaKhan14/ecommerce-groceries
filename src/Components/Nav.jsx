@@ -1,12 +1,12 @@
 import { Link} from "react-router-dom";
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import '../Style/Nav.css';
+import axios from "axios";
 
 
 export const Nav = ({cartCount}) => {
-  
-  return (
+ return (
     <nav className="navbar navbar-expand-lg nav-bar navbar-dark ">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">Shopper</Link>
