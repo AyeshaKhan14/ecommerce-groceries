@@ -1,0 +1,20 @@
+{
+  "Products": [
+    {
+      "name": "White wheat",
+      "price": 100,
+      "descripton": "",
+      "photos": "",
+      "stock": 10,
+      "sold": ["yes", "no"]
+    },
+    {
+      "name": "Brown wheat",
+      "price": 140,
+      "descripton": "",
+      "photos": "",
+      "stock": 8,
+      "sold": ["yes", "no"]
+    }
+  ]
+}
