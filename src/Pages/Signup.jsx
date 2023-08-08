@@ -53,7 +53,7 @@ export const Signup = () => {
     <div className='Container_signup_dib'>
     <div className='signup-div-border'>
         <div className='imgRobotSign'>
-
+          <img src="https://www.jiomart.com/msassets/images/login-banner.jpg" alt="name"/>
         </div>
         <div className='signup-body'>
           <div className='onDivSign'>
@@ -70,7 +70,7 @@ export const Signup = () => {
                 </div>
                 <button type="submit" className='sgnbtn'>SIGNUP</button>
                 <div className="span-div-sign">
-                 Already a user? <span style={{color:"blue"}}>
+                 Already a user? <span style={{color:"#008ecc"}}>
                <Link to={"/login"}>Login</Link> 
                 </span>
             </div>

@@ -1,0 +1,20 @@
+.footers {
+  background-color: #73a968;
+}
+
+.footer-items h5 {
+  color: white;
+  font-size: 1rem;
+}
+.footer-items ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.8rem;
+}
+.footer-items a {
+  color: #ccc;
+  text-decoration: none;
+}
+.footer-items a:hover {
+  text-decoration: underline;
+}

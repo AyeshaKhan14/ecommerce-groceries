@@ -7,7 +7,6 @@ export const getProduct=()=>(dispatch)=>{
     .then((res)=>{
         console.log(res.data)
         return dispatch({type:types.PRODUCT_GET_REQUEST,payload:res.data})
-
     }).catch((err)=>{
         return dispatch({type:types.PRODUCT_GET_FAILURE,payload:err})
     })

@@ -4,6 +4,7 @@ import { Home } from '../Pages/Home'
 import { Login } from '../Pages/Login'
 import { Signup } from '../Pages/Signup'
 
+
 export const AllRoutes = () => {
   return (
     <div>
@@ -11,7 +12,6 @@ export const AllRoutes = () => {
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/Signup" element={<Signup/>} />
-            
         </Routes>
     </div>
   )

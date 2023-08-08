@@ -1,5 +1,6 @@
 import * as types from  "./actionType"
 
+
 const initState={
     isLoading:false,
     isErr:false,
@@ -7,6 +8,7 @@ const initState={
 }
 
 export const reducer=(state=initState, {type,payload})=>{
+
     switch(payload){
         case types.PRODUCT_GET_REQUEST:
             return{
@@ -22,5 +24,6 @@ export const reducer=(state=initState, {type,payload})=>{
             }    
         default :
         return state
+
     }
 }
