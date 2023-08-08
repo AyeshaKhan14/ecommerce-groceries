@@ -7,9 +7,9 @@ import { Footer } from './Components/Footer';
 function App() {
   return (
     <div className="App">
-     {/* <Nav/> */}
+     <Nav/>
      <AllRoutes/>
-     {/* <Footer/> */}
+     <Footer/>
     </div>
   );
 }
