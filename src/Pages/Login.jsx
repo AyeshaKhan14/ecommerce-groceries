@@ -52,8 +52,9 @@ export const Login = () => {
                 isClosable: true,
                 position:"top"
               })
-               navigate("/")
+            navigate("/")
         }
+        console.log(res.payload,"login")
        
     }).catch((err)=>{
         console.log(err)

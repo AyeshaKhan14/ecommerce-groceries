@@ -34,6 +34,7 @@ export const Home = () => {
       <TitleBar text="Offer Banner"/>
       <MdBanners/>
       <CardSlider/>
+    {/* <ProductList /> */}
     </>
   );
 };
