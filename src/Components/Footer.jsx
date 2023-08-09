@@ -3,10 +3,10 @@ import "../Style/Footer.css";
 
 export const Footer = () => {
   return (
-    <div className="footer mt-auto bg-dark text-light">
+    <div className="footer mt-auto " style={{backgroundColor:"#00AAFF"}}>
       <div className="container py-3">
-        <div className="row d-flex footer-items">
-          <div className="col-lg-4">
+        <div className="row d-flex footer-items ">
+          <div className="col-lg-4 ">
             <h5>More About</h5>
 
             <ul>
@@ -14,7 +14,7 @@ export const Footer = () => {
                 <a href="#">About Us</a>
               </li>
               <li>
-                <a href="#">Green bigbasket</a>
+                <a href="#">Green basket</a>
               </li>
               <li>
                 <a href="#">Privacy Policy</a>
@@ -27,7 +27,7 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 ">
             <h5>Help</h5>
             <ul>
               <li>
@@ -47,7 +47,7 @@ export const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 ">
             <h5>Get Social With Us</h5>
             <div className="mt-2">
               <div

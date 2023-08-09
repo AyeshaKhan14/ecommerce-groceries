@@ -4,11 +4,11 @@ import "../Style/MdBanner.css";
 export const MdBanners = () => {
   return (
     <div>
-        <div style={{gap:"10px", marginTop:"10px",marginBottom:"0px",marginLeft:"6%",marginRight:"6%",display:"flex", flexDirection:"row",justifyContent:"space-between"}}>
+        <div className="MdBanner" style={{}}>
         <MdBanner img_link="small_banner1"/>
         <MdBanner img_link="small_banner2"/>
         </div>
-        <div style={{gap:"10px",marginTop:"0px",marginLeft:"6%",marginRight:"6%",display:"flex", flexDirection:"row",justifyContent:"space-between"}}>
+        <div className="MdBanner" >
         <MdBanner img_link="small_banner3"/>
         <MdBanner img_link="small_banner4"/>
         </div>
