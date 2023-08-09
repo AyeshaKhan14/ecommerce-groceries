@@ -33,7 +33,7 @@ export const Home = () => {
       <GridCards/>
       <TitleBar text="Offer Banner"/>
       <MdBanners/>
-      <CardSlider/>
+      {/* <CardSlider/> */}
     {/* <ProductList /> */}
     </>
   );
