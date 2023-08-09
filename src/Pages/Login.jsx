@@ -35,6 +35,15 @@ export const Login = () => {
                 position:"top"
               })
         }
+        else if(user.email === "" || user.password===""){
+            toast({
+                title: 'Plz Feilds details',
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+                position:"top"
+              })
+        }
         else{
             toast({
                 title: 'Signup Successful',
@@ -43,7 +52,7 @@ export const Login = () => {
                 isClosable: true,
                 position:"top"
               })
-              navigate("/")
+               navigate("/")
         }
        
     }).catch((err)=>{
@@ -56,8 +65,9 @@ export const Login = () => {
     <div className='Container_login_dib'>
         <div className='login-div-border'>
             <div className='imgRobot-login'>
-
+                <img src="https://www.jiomart.com/msassets/images/login-banner.jpg" alt="name"/>
             </div>
+            {/* login body */}
             <div className='login-body'>
                 <div className='oneDiv'>
                 <h1>Log in</h1>
@@ -70,13 +80,13 @@ export const Login = () => {
                     </div>
                     <button type="submit" className='butn'>LOGIN</button>
                     <div className="span-div">
-                    New to account? <span style={{color:"blue"}}>
+                    New to account? <span style={{color:"#008ecc"}}>
                     <Link to={"/signup"}>SignUp</Link>  
                     </span>
                 </div> 
                 <div style={{display:"flex" ,justifyContent:"center", alignItems:"center"}}>Or</div>
                 <div style={{display:"flex" ,justifyContent:"center", alignItems:"center"}}>
-                <Link style={{color:"blue"}} to="">Admin?</Link> 
+                <Link style={{color:"#008ecc"}} to="">Admin?</Link> 
                     </div>
                 </form>
                 </div>

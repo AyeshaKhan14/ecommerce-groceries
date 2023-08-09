@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import ProductList from "../Components/ProductList";
 import { useEffect } from 'react';
@@ -25,3 +26,12 @@ export const Wheat = () => {
     </>
   );
 };
+
+import React from 'react'
+
+export const Wheat = () => {
+  return (
+    <div>Wheat</div>
+  )
+}
+

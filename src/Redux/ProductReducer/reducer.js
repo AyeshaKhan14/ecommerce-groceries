@@ -1,4 +1,5 @@
-import * as types from  "./actionType"
+import * as types from "./actionType"
+
 
 const initState={
     isLoading:false,
@@ -22,5 +23,7 @@ export const reducer=(state=initState, {type,payload})=>{
             }    
         default :
         return state
+
     }
-}
+ }
+
