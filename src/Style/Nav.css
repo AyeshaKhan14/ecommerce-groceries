@@ -1,6 +1,5 @@
 .nav-bar {
   background-color: #008ecc;
-  
 }
 
 .nav-container {
@@ -9,7 +8,33 @@
   justify-content: space-between;
 }
 
-.colorset{
+.colorset {
   color: aliceblue;
-  text-decoration-color: aliceblue;
+}
+
+/* Styles for navbar toggler button */
+.navbar-toggler-icon {
+  color: aliceblue;
+}
+
+/* Styles for dropdown link */
+.nav-link.dropdown-toggle {
+  color: #008ecc;
+  background-color: #008ecc;
+}
+
+/* Styles for dropdown menu items */
+.dropdown-item {
+  background-color: #e0e6e8;
+  color: rgb(35, 38, 41);
+}
+
+/* Styles for cart icon and badge */
+.nav-link .bi-cart-plus-fill {
+  color: aliceblue;
+}
+
+.cart-badge.badge.bg-success {
+  background-color: aliceblue;
+  color: black; /* Ensuring the badge text is visible */
 }
