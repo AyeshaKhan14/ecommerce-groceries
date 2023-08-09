@@ -22,9 +22,17 @@ export const Nav = ({cartCount}) => {
                   
                 </a>
                 <ul className="dropdown-menu " aria-labelledby="navbarDropdown colorset">
-                  <li><a className="dropdown-item" href="/#products">Rice</a></li>
-                  <li><a className="dropdown-item" href="/#products">Weate</a></li>
-                  <li><a className="dropdown-item" href="/#products">Dal</a></li>
+                  <li><span className="dropdown-item" href="/#products">
+                  <Link className="navbar-brand" to="/Rice">Rice</Link>
+                    </span></li>
+                  <li><span className="dropdown-item" href="/#products">
+                  <Link className="navbar-brand" to="/Wheat">Wheat</Link>
+                    </span></li>
+                  <li><span className="dropdown-item" href="/#products">
+                  {/* <Link className="navbar-brand" to="/Dal"> */}
+                    Dal
+                    {/* </Link> */}
+                  </span></li>
                 </ul>
               </li>
               

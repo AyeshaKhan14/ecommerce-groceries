@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios'
 
 
-export const Wheat = () => {
+export const Rice = () => {
   const [products,setProducts]= useState([])
 //   const dispatch = useDispatch();
 

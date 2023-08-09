@@ -22,7 +22,7 @@ export const Home = () => {
 
   return (
     <>
-      {/* <Carousel />
+      <Carousel />
       <TitleBar text="Offer Banner"/>
       <Banner img_link="banner1"/>
       <TitleBar text="Offer Banner"/>
@@ -32,10 +32,8 @@ export const Home = () => {
       <TitleBar text="Offer Banner"/>
       <GridCards/>
       <TitleBar text="Offer Banner"/>
-      <MdBanners/> */}
-      <ProductList />
-      {/* <CardSlider/> */}
-      {/* <EmptyCart/> */}
+      <MdBanners/>
+      <CardSlider/>
     </>
   );
 };

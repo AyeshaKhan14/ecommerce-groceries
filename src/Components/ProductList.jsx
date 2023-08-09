@@ -7,15 +7,15 @@ const ProductList = ({Products}) => {
   // useEffect(() => {
   //   async function getResults() {
   //     const results = await axios('http://localhost:4000/products/all');
-  //     setProducts(results.data)
-  //     console.log(results.data)
+  //     setProducts(results.data.products)
+  //     console.log(results.data.products)
   //   }
   //   getResults()
   // },[])
   return (
     <div className="container mb-5 mt-5 ">
     <div id="products" className="row">
-       {Data.Products.map(product => <div className="col-xl-3 col-lg-4 col-md-6 col-sm-4 position-relative" >
+       {Products.map(product => <div className="col-xl-3 col-lg-4 col-md-6 col-sm-4 position-relative" style={{marginBottom:"10px",marginTop:"10px"}}>
         <div className="card product-item">
           <img src="images/rice.jpeg" className="card-img-top" style={{maxHeight:"200px" ,maxWidth:"230px",marginLeft:"auto",marginRight:"auto"}} alt="..." data-bs-toggle="tooltip" data-bs-placement="top" title="Click to See Product Details"/>
           <div className="card-body">
