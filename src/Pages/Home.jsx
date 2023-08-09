@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {Banner} from "../Components/banner";
 import { GridCards } from "../Components/GridCard";
 import { MdBanners } from "../Components/MdBanner";
+import CardSlider from "../Components/CardSlider";
+import TitleBar from "../Components/TitleBar";
+import EmptyCart from "../Components/EmptyCart";
 
 export const Home = () => {
   // const dispatch = useDispatch();
@@ -19,13 +22,20 @@ export const Home = () => {
 
   return (
     <>
-      <Carousel />
+      {/* <Carousel />
+      <TitleBar text="Offer Banner"/>
       <Banner img_link="banner1"/>
+      <TitleBar text="Offer Banner"/>
       <Banner img_link="banner2"/>
+      <TitleBar text="Offer Banner"/>
       <Banner img_link="banner3"/>
+      <TitleBar text="Offer Banner"/>
       <GridCards/>
-      <MdBanners/>
+      <TitleBar text="Offer Banner"/>
+      <MdBanners/> */}
       <ProductList />
+      {/* <CardSlider/> */}
+      {/* <EmptyCart/> */}
     </>
   );
 };
