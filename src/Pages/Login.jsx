@@ -46,7 +46,7 @@ export const Login = () => {
         }
         else{
             toast({
-                title: 'Signup Successful',
+                title: 'Login Successful',
                 status: 'success',
                 duration: 3000,
                 isClosable: true,
