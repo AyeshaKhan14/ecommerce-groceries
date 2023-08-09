@@ -1,0 +1,9 @@
+.gridcard{
+    background-color: #96c4f6;
+    background-size: 100%;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 20px;
+    font-family: sans-serif;
+    width: 340px;
+}
