@@ -4,6 +4,7 @@ import { Home } from '../Pages/Home'
 import { Login } from '../Pages/Login'
 import { Signup } from '../Pages/Signup'
 import { Dal } from '../Pages/Dal'
+import { CartPage } from '../Pages/CartPage'
 
 
 export const AllRoutes = () => {
@@ -14,6 +15,7 @@ export const AllRoutes = () => {
             <Route path="/login" element={<Login/>} />
             <Route path="/Signup" element={<Signup/>} />
             <Route path="/dal" element={<Dal/>} />
+            <Route path="/cart" element={<CartPage/>} />
         </Routes>
     </div>
   )

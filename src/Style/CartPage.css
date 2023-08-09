@@ -1,0 +1,218 @@
+.cart_container{
+    /* border:2px solid red; */
+    width:80%;
+    margin: auto;
+    height:auto;
+    display: flex;
+    gap:50px;
+
+}
+    /* cart section css */
+
+.cart_section{
+    /* border: 2px solid green; */
+    width:60%;
+    /* height:100%; */
+}
+.my_cart_div{
+    /* border: 2px solid rgb(21, 22, 21); */
+    text-align: start;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+.basket_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4%;
+}
+
+/* data map css */
+
+.data_map_container{
+    border:1px solid rgb(159, 155, 155);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.image_constin_div{
+    width:150px;
+    height:130px;
+}
+.image_constin_div>img{
+    height:100%;
+    width:100%;
+
+}
+.disctiptn_div{
+    /* border:1px solid red; */
+    display: block;
+}
+.disctiptn_div>p{
+    font-family: sans-serif;
+}
+.sols{
+    color: gray;
+   font-style: italic;
+   font-family: sans-serif;
+   text-align: start;
+}
+.price_and_bttns{
+    /* border:1px solid red; */
+    width:100px;
+}
+.price_and_bttns>p{
+    text-align: start;
+    font-family: sans-serif;
+}
+.remove_icons{
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: end;
+    width:100px;
+}
+.btn_plumin{
+    display: flex;
+    gap:10px;
+  
+   
+}
+
+.btn_plumin>button{
+    /* border:2px solid black; */
+    height:30px;
+    width:30px;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: #008ecc;
+    color:white;
+}
+
+
+
+/* payment section css */
+
+.payment_section{
+    /* border: 2px solid green; */
+    width:40%;
+    /* height:100%; */
+}
+.payment_details{
+    /* border: 2px solid black; */
+    height:400px;
+    margin-top:15% ;
+}
+.payment_details>h1{
+    text-align: left;
+    font-size: 26px;
+    font-family: sans-serif;
+}
+.block_mrp_div{
+    /* border: 2px solid red; */
+    display: block;
+    margin-top: 9%;
+  
+}
+.mrp_price{
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+  border:1px solid gray;
+  padding: 6px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.product_discount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid gray;
+    padding: 6px;
+    border-top: none;
+  border-left: none;
+  border-right: none;
+   
+}
+.total_amount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  border:1px solid gray;
+  padding: 6px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+}
+h3{
+    font-size: 20px;
+}
+/* 
+button */
+
+.button_div{
+    /* border:2px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 4%;
+}
+.button_div>button{
+    width: 50%;
+    background-color:rgba(4, 153, 153, 0.974);
+    border:1px solid rgba(4, 153, 153, 0.974);
+    height:45px;
+    color:white;
+    border-radius: 5px;
+    font-size: 18px;
+
+}
+.button_div>button:hover{
+background-color: teal;
+    
+}
+.disctiptn_div>p{
+    text-align: start;
+}
+
+
+@media screen and (max-width: 640px){
+    .cart_container{
+        /* border:2px solid red; */
+        width:100%;
+        display: block;
+    
+    }
+    .cart_section{
+        /* border: 2px solid green; */
+        width:100%;
+    }
+    .payment_section{
+        /* border: 2px solid green; */
+        width:100%;
+    }
+    .cart_section{
+        /* border: 2px solid blue; */
+        width:100%;
+        margin-bottom: 10%;
+        /* height:100%; */
+    }
+    .image_constin_div{
+        width:150px;
+        height:130px;
+        /* border: 2px solid green; */
+    }
+    
+    .disctiptn_div{
+        width:140px;
+    }
+    .data_map_container{
+      gap:20px;
+        
+    }
+}

@@ -25,7 +25,7 @@ export const Home = () => {
       <Banner img_link="banner3"/>
       <GridCards/>
       <MdBanners/>
-      <ProductList />
+      {/* <ProductList /> */}
     </>
   );
 };
