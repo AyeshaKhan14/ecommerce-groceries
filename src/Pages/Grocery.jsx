@@ -5,11 +5,16 @@ import { useEffect } from 'react';
 import axios from 'axios'
 import { Loading } from "../Components/Loading";
 import { api } from "../Redux/ProductReducer/action";
+import { useDispatch } from "react-redux";
+import { postCart } from "../Redux/CartReducer/action";
+import { useToast } from '@chakra-ui/react'
 
 
 export const Grocery = () => {
   const [grocery,setGrocery]= useState([])
   const [load,setLoad]= useState(false)
+  const dispatch= useDispatch()
+  const toast = useToast()
 
   useEffect(()=>{
     setLoad(true)
@@ -22,6 +27,39 @@ export const Grocery = () => {
       console.log(err)
     })
   },[])
+    
+
+  const handleAddCart=(el)=>{
+    // console.log(id,"data")
+    const {user} = JSON.parse(localStorage.getItem("eco-token"))
+    // console.log(user?._id);
+  
+          dispatch(postCart({userId: user?._id, productId:el._id, quantity: 1,image:el.image,productName:el.name,description:el.description}))
+          .then((res)=>{
+            console.log(res)
+            if(res.type==="CART_POST_SUCCESS")
+            {
+              toast({
+                title: 'Item Added Successful',
+                status: 'success',
+                duration: 3000,
+                isClosable: true,
+                position:"top"
+              })
+            }
+            else{
+              toast({
+                title: 'Item Already exists',
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+                position:"top"
+              })
+            }
+          }).catch((err)=>{
+            console.log(err)
+          })
+         }
 
   if(load){
     return <Loading/>
@@ -37,7 +75,7 @@ export const Grocery = () => {
            <div className='price_div_solid'> <p>$20</p>
            <p style={{color:"gray",fontSize:"16px",fontStyle:"italic"}}>sold:{el.sold}</p>
            </div>
-           <button className='button_addtocart'>Add to Cart</button>
+           <button className='button_addtocart' onClick={()=>handleAddCart(el)}>Add to Cart</button>
       </div>
     })}
   </div>

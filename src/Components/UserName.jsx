@@ -20,7 +20,7 @@ export const UserName = () => {
  const dispatch= useDispatch()
 
  const userdata= useSelector((state)=>state.AuthReducer.userDetails)
-
+ console.log(userdata.user,"userdata")
        const handlelogout=()=>{
         dispatch(handleLogout())
        }
@@ -38,7 +38,7 @@ export const UserName = () => {
             <Menu isLazy>
             <MenuButton style={menuButtonStyle}> 
             <div className="menu_arrow">
-            <Text style={{color:"white", marginTop:"15px"}}>{userdata.user.name}</Text>
+            <Text style={{color:"white", marginTop:"15px"}}>{userdata?.user.name}</Text>
             <AiOutlineDown style={{color:"white",marginLeft:"10px"}} />
          </div>
        </MenuButton>

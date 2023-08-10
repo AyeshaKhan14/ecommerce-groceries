@@ -3,22 +3,52 @@ import "../Style/CartPage.css"
 import { CartIcons } from '../Components/CartIcons'
 import axios from 'axios'
 import {RxCross1} from "react-icons/rx"
+import { useDispatch, useSelector } from 'react-redux'
+import { getCart, getDelete, patchCart } from '../Redux/CartReducer/action'
+import { user } from '../data/demo'
+
+
+
 
 export const CartPage = () => {
+  
     const [dal,setDal] = useState([])
     const mrptotal=12
     const prdDisct=12
     const totalAmt=19
+const dispatch= useDispatch()
+const [cart]= useSelector((state)=>state.CartReducer.cart)
 
-    useEffect(()=>{
-        axios.get("http://localhost:4000/products/all")
+const data=cart?.products
+console.log(data,"cart")
+
+
+ 
+     useEffect(()=>{
+     
+        dispatch(getCart(user._id))
+    
+     },[])
+   
+
+     const handleDelete=(id)=>{ 
+      console.log(id,"prdoID")
+      dispatch(getDelete(id))
+
+     }
+     const handleAddPlus=(id,count)=>{
+      console.log(count,"count")
+        dispatch(patchCart({userId:user?._id,productId:id}))
         .then((res)=>{
-         console.log(res.data.products,"res.dal")
-         setDal(res.data.products)
+          dispatch(getCart())
         }).catch((err)=>{
-         console.log(err)
+          console.log(err)
         })
-    })
+     }
+
+     const handledecmin=(id)=>{
+
+     }
 
 
   return (
@@ -33,10 +63,10 @@ export const CartPage = () => {
          
          {/* data map */}
        
-            {dal?.map((el)=>{
+            {data?.map((el)=>{
                 return <div className='data_map_container' key={el._id}>
                        <div className='image_constin_div'>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC_T_sOZgDXbJKtIJYF6PgKfhfj4q_hQRXMEyqSoNQ&s"/>
+                        <img src={el.image}/>
                        </div>
                        <div className='disctiptn_div'>
                         <p>{el.description}</p> 
@@ -45,12 +75,12 @@ export const CartPage = () => {
                        <div className='price_and_bttns'>
                         <p>Price{el.price}</p>
                         <div className='btn_plumin'>
-                            <button>+</button>
-                            <p>2</p>
-                            <button>-</button>
+                            <button onClick={()=>handleAddPlus(el._id,el.count)}>+</button>
+                            <p>{el.count}</p>
+                            <button onClick={()=>handledecmin(el._id)}>-</button>
                         </div>
                        </div>
-                       <div className='remove_icons'>{<RxCross1/>}</div>
+                       <div className='remove_icons' onClick={()=>handleDelete(el._id)} >{<RxCross1/>}</div>
                 </div>
             })}
       

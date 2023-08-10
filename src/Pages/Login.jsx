@@ -44,6 +44,15 @@ export const Login = () => {
                 position:"top"
               })
         }
+        else if(res.message==='Invalid credentials'){
+            toast({
+                title: 'Invalid credentials',
+                status: 'error',
+                duration: 3000,
+                isClosable: true,
+                position:"top"
+              })
+        }
         else{
             toast({
                 title: 'Login Successful',
@@ -52,9 +61,9 @@ export const Login = () => {
                 isClosable: true,
                 position:"top"
               })
-            navigate("/")
+           navigate("/")
         }
-        // console.log(res.payload,"login")
+        //  console.log(res.payload,"login")
         localStorage.setItem("eco-token",JSON.stringify(res.payload))
     }).catch((err)=>{
         console.log(err)
@@ -87,7 +96,7 @@ export const Login = () => {
                 </div> 
                 <div style={{display:"flex" ,justifyContent:"center", alignItems:"center"}}>Or</div>
                 <div style={{display:"flex" ,justifyContent:"center", alignItems:"center"}}>
-                <Link style={{color:"#008ecc"}} to="">Admin?</Link> 
+                <Link style={{color:"#008ecc"}} to="https://admin-wine-nine.vercel.app/">Admin?</Link> 
                     </div>
                 </form>
                 </div>

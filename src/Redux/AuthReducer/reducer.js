@@ -1,14 +1,14 @@
 import * as types from "./actionType"
 
-const x=JSON.parse(localStorage.getItem("eco-token")) || {}
-// console.log(x,"obj")
-let Auth=Object.keys(x).length>0 ? true : false
+// const x=JSON.parse(localStorage.getItem("eco-token")) || {}
+// // console.log(x,"obj")
+// let Auth=Object.keys(x).length>0 ? true : false
 
 const initState={
-    isAuth:Auth,
+    isAuth:false,
     isLoading:false,
     isErr:false,
-    userDetails:x,
+    userDetails:{},
     token:[]
 }
 
@@ -44,8 +44,11 @@ export const reducer= (state = initState,{type,payload})=>{
             } 
         case types.LOGIN_POST_FAILURE:
             return{
-                ...state,
-                isErr:true,isLoading:false
+               ...state,
+        isErr: true,
+        isLoading: false,
+        userDetails: {},
+        token: [],
             }     
          case types.LOGOUT_REQUEST:
             localStorage.removeItem("eco-token")
