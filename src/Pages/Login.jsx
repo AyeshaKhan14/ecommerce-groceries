@@ -54,8 +54,8 @@ export const Login = () => {
               })
             navigate("/")
         }
-        console.log(res.payload,"login")
-       
+        // console.log(res.payload,"login")
+        localStorage.setItem("eco-token",JSON.stringify(res.payload))
     }).catch((err)=>{
         console.log(err)
     })

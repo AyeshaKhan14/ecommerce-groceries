@@ -1,0 +1,22 @@
+.menu_arrow{
+    display: flex;
+    align-items: center;
+  /* display:1px solid red; */
+}
+.user_div{
+    /* border:2px solid black; */
+    display: flex;
+    align-items: center;
+     justify-content: center;
+    width:100px;
+    gap:10px
+}
+.another_user_div{
+    display: flex;
+    align-items: center;
+    gap:30px;
+    height:30px;
+}
+.menu-button{
+    border: none
+}

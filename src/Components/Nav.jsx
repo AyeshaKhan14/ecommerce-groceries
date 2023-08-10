@@ -3,9 +3,13 @@ import React, { useEffect } from 'react'
 
 import '../Style/Nav.css';
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { UserName } from "./UserName";
 
 
 export const Nav = ({cartCount}) => {
+ const user= useSelector((state)=>state.AuthReducer.isAuth)
+
  return (
     <nav className="navbar navbar-expand-lg nav-bar navbar-dark ">
         <div className="container-fluid nav-container" >
@@ -23,15 +27,15 @@ export const Nav = ({cartCount}) => {
                 </a>
                 <ul className="dropdown-menu " aria-labelledby="navbarDropdown colorset">
                   <li><span className="dropdown-item" href="/#products">
-                  <Link className="navbar-brand" to="/Rice">Rice</Link>
+                  <Link className="navbar-brand" to="/fresh">Fresh Grocery</Link>
                     </span></li>
                   <li><span className="dropdown-item" href="/#products">
-                  <Link className="navbar-brand" to="/Wheat">Wheat</Link>
+                  <Link className="navbar-brand" to="/grocery">Daily Grocery</Link>
                     </span></li>
                   <li><span className="dropdown-item" href="/#products">
-                  {/* <Link className="navbar-brand" to="/Dal"> */}
-                    Dal
-                    {/* </Link> */}
+                  <Link className="navbar-brand" to="/meat">
+                    Meat
+                    </Link>
                   </span></li>
                 </ul>
               </li>
@@ -44,12 +48,12 @@ export const Nav = ({cartCount}) => {
                   <i className="bi bi-cart-plus-fill"></i> 
                   <span className="cart-badge badge bg-success">{cartCount}</span></Link>
               </li>
-              <li className="nav-item dropdown colorset">
+                    {!user ? ( <li className="nav-item dropdown colorset">
               <Link  to="/login" tabindex="-1">
                 <a className="nav-link "  id="Login/Signup" role="button"  aria-expanded="false">
                 <label className="colorset">Login/Signup</label>
                 </a></Link>
-              </li> 
+              </li> ) : (<UserName/>)}
             </ul>
           </div>
         </div>

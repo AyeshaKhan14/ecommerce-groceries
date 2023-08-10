@@ -9,7 +9,7 @@ export const LoginPost=(user)=>(dispatch)=>{
         body:JSON.stringify(user)
     }).then((res)=>res.json())
     .then((res)=>{
-        console.log(res,"logAct")
+        // console.log(res,"logAct")
         return dispatch({type:types.LOGIN_POST_SUCCESS,payload:res})
     }).catch((err)=>{
         return dispatch({type:types.LOGIN_POST_FAILURE,payload:err})
@@ -31,3 +31,9 @@ export const SignPost= (user)=>(dispatch)=>{
         return dispatch({type:types.SIGNUP_POST_FAILURE,payload:err})
     })
 }
+
+//logout
+export const handleLogout=()=>(dispatch)=>{
+    return dispatch({type:types.LOGOUT_REQUEST})
+ 
+ }

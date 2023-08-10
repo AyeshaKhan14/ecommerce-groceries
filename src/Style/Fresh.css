@@ -1,0 +1,76 @@
+.fresh_div_conttainer{
+    /* border:2px solid red; */
+    width:85%;
+    margin:auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap:35px;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+.container_div_grid{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 5px;
+    height:440px;
+    padding: 10px;
+    padding-bottom: 20px;
+    border:1px solid gray;
+}
+.container_div_grid>h3{
+    margin-top: 15px;
+}
+.container_div_grid>p{
+    font-size: 18px;
+    font-family: sans-serif;
+}
+.container_div_grid>img{
+    width:100%;
+    height:50%;
+    border-radius: 5px;
+}
+
+.price_div_solid{
+    /* border:1px solid black; */
+    display: flex;  
+    justify-content: center;
+    gap:40px;
+    align-items: center;
+}
+.price_div_solid>p{
+    font-size: 22px;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.button_addtocart{
+    border:2px solid #029ee1;
+    width:50%;
+    height:45px;
+    background-color: #008ecc;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+.button_addtocart:hover{
+    background-color: #0077b3;
+    border-color: #0077b3;
+}
+
+@media screen and (max-width: 640px){
+    .fresh_div_conttainer{
+        width:100%;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .container_div_grid{
+        height:450px;
+    }
+
+    .button_addtocart{
+        width:50%;
+        height:38px;
+        font-family: sans-serif;
+        font-size: 12px;
+       
+        
+    }
+}

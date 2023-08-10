@@ -11,3 +11,5 @@ export const getProduct=()=>(dispatch)=>{
         return dispatch({type:types.PRODUCT_GET_FAILURE,payload:err})
     })
 }
+
+export const api = "https://ecom-backend-wdkk.onrender.com/products/all/cagegory"

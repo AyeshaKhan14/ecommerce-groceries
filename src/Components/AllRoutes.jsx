@@ -3,10 +3,10 @@ import { Route, Routes } from 'react-router-dom'
 import { Home } from '../Pages/Home'
 import { Login } from '../Pages/Login'
 import { Signup } from '../Pages/Signup'
-import { Wheat } from '../Pages/Wheat'
-import { Rice } from '../Pages/Rice'
-import { Dal } from '../Pages/Dal'
+import { Meat } from '../Pages/Meat'
+import { Grocery } from '../Pages/Grocery'
 import { CartPage } from '../Pages/CartPage'
+import { Fresh } from '../Pages/Fresh'
 
 export const AllRoutes = () => {
   return (
@@ -15,9 +15,9 @@ export const AllRoutes = () => {
             <Route path="/" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/Signup" element={<Signup/>} />
-            <Route path="/Rice" element={<Rice/>} />
-            <Route path="/Wheat" element={<Wheat/>} />
-            <Route path="/dal" element={<Dal/>} />
+            <Route path="/grocery" element={<Grocery/>} />
+            <Route path="/meat" element={<Meat/>} />
+            <Route path="/fresh" element={<Fresh/>} />
             <Route path="/cart" element={<CartPage/>} />
         </Routes>
     </div>
