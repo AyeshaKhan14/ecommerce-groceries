@@ -6,3 +6,11 @@
 .product-img:hover {
     opacity: 0.7;
   }
+
+  .price_div_solid{
+    /* border:1px solid black; */
+    display: flex;  
+    justify-content: center;
+    gap:40px;
+    align-items: center;
+}

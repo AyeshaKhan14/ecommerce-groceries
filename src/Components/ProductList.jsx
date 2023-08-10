@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Data from "../data/data.json"
 import axios from 'axios'
+import "../Style/ProductList.css"
 
 const ProductList = ({Products}) => {
   // const [Products,setProducts] = useState([])
@@ -12,6 +13,7 @@ const ProductList = ({Products}) => {
   //   }
   //   getResults()
   // },[])
+  
   return (
     <div className="container mb-5 mt-5 ">
     <div id="products" className="row">
@@ -21,8 +23,10 @@ const ProductList = ({Products}) => {
           <div className="card-body">
             <h6 className="card-subtitle mb-2 text-muted  fw-light">{product.category}</h6>
             <h5 className="card-title">{product.name}</h5>
-            <p className="card-text price"> ${product.price} 
-            </p>
+            
+            <div className='price_div_solid'> <p className="card-text price"> ${product.price} </p>
+           <p style={{color:"gray",fontSize:"16px",fontStyle:"italic"}}>sold:{product.sold}</p>
+           </div>
             <div className="text-center">
               <a className="btn btn-info w-100" onClick={"() => addTOCart(product)"} role="button" > Add To Cart</a>
             </div>

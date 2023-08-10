@@ -43,3 +43,8 @@
   background-color: aliceblue;
   color: black; /* Ensuring the badge text is visible */
 }
+.dropdown-item:hover{
+  background-color: #6f6f74;
+  color: #1b1b32;
+  cursor: pointer;
+}
