@@ -7,6 +7,7 @@ import { Meat } from '../Pages/Meat'
 import { Grocery } from '../Pages/Grocery'
 import { CartPage } from '../Pages/CartPage'
 import { Fresh } from '../Pages/Fresh'
+import AllProducts from '../Pages/AllProducts'
 
 export const AllRoutes = () => {
   return (
@@ -18,6 +19,7 @@ export const AllRoutes = () => {
             <Route path="/grocery" element={<Grocery/>} />
             <Route path="/meat" element={<Meat/>} />
             <Route path="/fresh" element={<Fresh/>} />
+            <Route path="/allProducts" element={<AllProducts/>} />
             <Route path="/cart" element={<CartPage/>} />
         </Routes>
     </div>
