@@ -46,14 +46,15 @@ export const Login = () => {
         }
         else{
             toast({
-                title: 'Signup Successful',
+                title: 'Login Successful',
                 status: 'success',
                 duration: 3000,
                 isClosable: true,
                 position:"top"
               })
-               navigate("/")
+            navigate("/")
         }
+        console.log(res.payload,"login")
        
     }).catch((err)=>{
         console.log(err)

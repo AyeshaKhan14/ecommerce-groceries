@@ -3,10 +3,11 @@ import "../Style/Signup.css"
 import { useDispatch } from 'react-redux'
 import { SignPost } from '../Redux/AuthReducer/action'
 import { useToast } from '@chakra-ui/react'
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 export const Signup = () => {
    const dispatch= useDispatch()
+   const navigate= useNavigate()
    const toast = useToast()
     const [user,setUser]= useState({
         name:"",
@@ -40,6 +41,7 @@ export const Signup = () => {
             isClosable: true,
             position:"top"
           })
+          navigate("/login")
       }
         console.log(res)
     }).catch((err)=>{

@@ -3,7 +3,7 @@ import "../Style/Footer.css";
 
 export const Footer = () => {
   return (
-    <div className="footer mt-auto footers" style={{backgroundColor:"#00AAFF"}}>
+    <div className="footer mt-auto " style={{backgroundColor:"black"}}>
       <div className="container py-3">
         <div className="row d-flex footer-items ">
           <div className="col-lg-4 ">

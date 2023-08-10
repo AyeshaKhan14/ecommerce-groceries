@@ -11,7 +11,6 @@ export const Home = () => {
   return (
     <div style={{maxHeight:"100%",marginBottom:"10px"}}>
       <Carousel />
-      
       <TitleBar text="Grab The Best Deal On Wednesday" color="Black"/>
       <Banner img_link="banner1"/>
       <TitleBar text="At Lowest Price Delivery" color="Black"/>
@@ -24,8 +23,8 @@ export const Home = () => {
       <GridCards/>
       <TitleBar text="Top Offer" color="Black"/>
       <MdBanners/>
-
       <ProductSlider/>
     </div>
+    </>
   );
 };
