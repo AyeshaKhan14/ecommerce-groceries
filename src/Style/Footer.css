@@ -1,5 +1,6 @@
 .footers {
   text-decoration-color: black;
+  
 }
 
 .footer-items h5 {
@@ -8,7 +9,7 @@
 }
 .footer-items ul {
   list-style: none;
-  padding: 0;
+  padding: 1px;
   font-size: 0.8rem;
 }
 .footer-items a {

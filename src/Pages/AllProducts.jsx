@@ -1,14 +1,11 @@
-
 import React, { useState } from "react";
 import ProductList from "../Components/ProductList";
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios'
 
-
-export const Rice = () => {
-  const [products,setProducts]= useState([])
-//   const dispatch = useDispatch();
+const AllProducts = () => {
+    const [products,setProducts]= useState([])
 
   useEffect(()=>{
     async function getResults() {
@@ -19,11 +16,12 @@ export const Rice = () => {
       getResults()
   },[])
 
-
   return (
     <>
       <ProductList Products={products}/>
     </>
-  );
-};
+  )
+}
+
+export default AllProducts
 

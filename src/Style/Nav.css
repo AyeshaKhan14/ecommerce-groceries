@@ -1,5 +1,9 @@
 .nav-bar {
   background-color: #008ecc;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
 }
 
 .nav-container {
@@ -25,8 +29,9 @@
 
 /* Styles for dropdown menu items */
 .dropdown-item {
-  background-color: #e0e6e8;
+  background-color: #008ecc;
   color: rgb(35, 38, 41);
+  text-decoration-color: black;
 }
 
 /* Styles for cart icon and badge */

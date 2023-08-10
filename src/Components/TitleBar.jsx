@@ -1,9 +1,10 @@
 import React from "react";
+import "../Style/Titlebar.css"
 
-const TitleBar = ({text}) => {
+const TitleBar = ({text,color}) => {
   return (
       <nav className="navbar-light" style={{margin:"0px",padding:"5px",textAlign:"center",alignItems:"center",justifyItems:"center"}}>
-          <h4 style={{margin:"0px",padding:"5px",textAlign:"center",alignItems:"center",justifyItems:"center", borderBottom:"1px solid #ccc"}}>{text}</h4>
+          <p className="Title-text" style={{color:color}}>{text}</p>
       </nav>
   );
 };
