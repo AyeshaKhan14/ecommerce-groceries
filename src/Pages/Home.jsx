@@ -1,40 +1,29 @@
 import React from "react";
 import { Carousel } from "../Components/carousel";
-import ProductList from "../Components/ProductList";
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import {Banner} from "../Components/banner";
 import { GridCards } from "../Components/GridCard";
 import { MdBanners } from "../Components/MdBanner";
 import CardSlider from "../Components/CardSlider";
 import TitleBar from "../Components/TitleBar";
-import EmptyCart from "../Components/EmptyCart";
+import { ProductSlider } from "../Components/ProductSlider";
 
 export const Home = () => {
-  // const dispatch = useDispatch();
-
-  // const Products = useSelector(state => state.product.products)
-
-  // useEffect(()=>{
-  //   dispatch(initializeProductsAC());
-  // },[])
-
-
   return (
-    <>
+    <div style={{maxHeight:"100%",marginBottom:"10px"}}>
       <Carousel />
-      <TitleBar text="Offer Banner"/>
+      <TitleBar text="Grab The Best Deal On Wednesday" color="Black"/>
       <Banner img_link="banner1"/>
-      <TitleBar text="Offer Banner"/>
+      <TitleBar text="At Lowest Price Delivery" color="Black"/>
       <Banner img_link="banner2"/>
-      <TitleBar text="Offer Banner"/>
+      <TitleBar text="Best Offer On DISINFECTANTS" color="Black"/>
       <Banner img_link="banner3"/>
-      <TitleBar text="Offer Banner"/>
+      <TitleBar text="Shop from Top Categories" color="Black"/>
+      <Banner img_link="banner4"/>
+      <TitleBar text="Your Daily Neads" color="Red"/>
       <GridCards/>
-      <TitleBar text="Offer Banner"/>
+      <TitleBar text="Top Offer" color="Black"/>
       <MdBanners/>
-      {/* <CardSlider/> */}
-    {/* <ProductList /> */}
-    </>
+      <ProductSlider/>
+    </div>
   );
 };
