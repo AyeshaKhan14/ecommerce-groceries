@@ -11,7 +11,7 @@ export const Rice = () => {
 
   useEffect(()=>{
     async function getResults() {
-        const results = await axios('http://localhost:4000/products/all');
+        const results = await axios('https://ecom-backend-wdkk.onrender.com/products/all');
         setProducts(results.data.products)
         console.log(results.data.products)
       }

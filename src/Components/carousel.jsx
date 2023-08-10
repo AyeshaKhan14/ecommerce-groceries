@@ -10,21 +10,21 @@ export const Carousel = () => {
         </ol>
         <div className="carousel-inner">
           <div className="carousel-item active" data-bs-interval="3000" >
-            <img src="images/offer-slider1.png" style={{maxHeight:"350px"}} className="d-block w-100" alt="..."/>
+            <img src="images/offer-slider2.webp" style={{maxHeight:"350px"}} className="d-block w-100" alt="..."/>
             <div className="carousel-caption d-none d-md-block">
               {/* <h5>First slide label</h5>
               <p>Sale sale sale</p> */}
             </div>
           </div>
           <div className="carousel-item" data-bs-interval="3000">
-            <img src="images/offer-slider2.jpg" style={{maxHeight:"350px"}} className="d-block w-100" alt="..."/>
+            <img src="images/offer-slider3.webp" style={{maxHeight:"350px"}} className="d-block w-100" alt="..."/>
             <div className="carousel-caption d-none d-md-block">
-              {/* <h5>Second slide label</h5>
-              <p>Damaka offer</p> */}
+              {/* <h5>Third slide label</h5>
+              <p>Grab It Fast.</p> */}
             </div>
           </div>
           <div className="carousel-item" data-bs-interval="3000">
-            <img src="images/offer-slider3.jfif" style={{maxHeight:"350px"}} className="d-block w-100" alt="..."/>
+            <img src="images/offer-slider4.webp" style={{maxHeight:"350px"}} className="d-block w-100" alt="..."/>
             <div className="carousel-caption d-none d-md-block">
               {/* <h5>Third slide label</h5>
               <p>Grab It Fast.</p> */}

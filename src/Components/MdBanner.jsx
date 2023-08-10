@@ -3,12 +3,10 @@ import "../Style/MdBanner.css";
 
 export const MdBanners = () => {
   return (
-    <div>
-        <div className="MdBanner" style={{}}>
+    <div className='MdBanners'>
+        <div className="MdBanner" >
         <MdBanner img_link="small_banner1"/>
         <MdBanner img_link="small_banner2"/>
-        </div>
-        <div className="MdBanner" >
         <MdBanner img_link="small_banner3"/>
         <MdBanner img_link="small_banner4"/>
         </div>
