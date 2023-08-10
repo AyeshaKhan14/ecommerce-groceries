@@ -25,6 +25,5 @@ export const Home = () => {
       <MdBanners/>
       <ProductSlider/>
     </div>
-    </>
   );
 };
