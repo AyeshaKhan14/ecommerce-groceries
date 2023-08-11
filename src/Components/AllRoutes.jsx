@@ -8,6 +8,8 @@ import { Grocery } from '../Pages/Grocery'
 import { CartPage } from '../Pages/CartPage'
 import { Fresh } from '../Pages/Fresh'
 import AllProducts from '../Pages/AllProducts'
+import CheckoutPage from '../Pages/CheckoutPage'
+import OrderSuccessPage from '../Pages/OrderSuccessPage'
 
 export const AllRoutes = () => {
   return (
@@ -21,6 +23,8 @@ export const AllRoutes = () => {
             <Route path="/fresh" element={<Fresh/>} />
             <Route path="/allProducts" element={<AllProducts/>} />
             <Route path="/cart" element={<CartPage/>} />
+            <Route path="/CheckoutPage" element={<CheckoutPage/>} />
+            <Route path="/OrderSuccessPage" element={<OrderSuccessPage/>} />
         </Routes>
     </div>
   )

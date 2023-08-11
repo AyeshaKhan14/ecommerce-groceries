@@ -47,13 +47,24 @@
     font-family: sans-serif;
     font-weight: 600;
 }
-input{
+.input_input>input{
     border:1px solid rgba(0, 0, 0, 0.267);
     width: 90%;
     padding:2%;
     border-radius: 5px;
     margin: 3%;
-    font-family: sans-serif
+    font-family: sans-serif;
+    /* border:1px solid red; */
+
+}
+.inputsbtn{
+    border:1px solid rgba(0, 0, 0, 0.267);
+    width: 90% !important;
+    padding:2%;
+    border-radius: 5px;
+    margin: 3%;
+    font-family: sans-serif;
+    border:1px solid red;
 
 }
 .butn{

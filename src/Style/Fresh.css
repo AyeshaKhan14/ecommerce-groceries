@@ -6,7 +6,7 @@
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: auto;
     gap:35px;
-    margin-top: 2%;
+    margin-top: 6%;
     margin-bottom: 3%;
 }
 .container_div_grid{

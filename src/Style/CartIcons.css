@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     gap:6px;
+    margin-top: 14%;
 }
 .bag_shopping{
     display: flex;

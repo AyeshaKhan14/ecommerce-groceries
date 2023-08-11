@@ -6,17 +6,29 @@ import { api } from "../Redux/ProductReducer/action";
 import { Loading } from "../Components/Loading";
 import { useToast } from '@chakra-ui/react'
 import { useDispatch } from "react-redux";
-import { postCart } from "../Redux/CartReducer/action";
+import { Api, postCart } from "../Redux/CartReducer/action";
+import { UserId } from "../data/demo";
+import { useNavigate } from "react-router-dom";
 
 export const Meat = () => {
   const [meat,setMeat]= useState([])
   const [load,setLoad]= useState(false)
   const toast = useToast()
   const dispatch= useDispatch()
+  const navigate= useNavigate()
+  const [authenticate, setAuthentcate] = useState(false)
+   
+  
+  // if (localStorage.getItem('eco-token')) {
+  //   // User is authenticated
+  //   console.log("User is authenticated");
+  //   setAuthentcate(true)
+  // } 
+  
 
   useEffect(()=>{
     setLoad(true)
-    axios.get(`${api}/64d31c405c41b4a4a42a9b35`)
+    axios.get(`${Api}/products/all/cagegory/64d31c405c41b4a4a42a9b35`)
     .then((res)=>{
       console.log(res.data.products,"data")
       setMeat(res.data.products)
@@ -24,40 +36,53 @@ export const Meat = () => {
     }).catch((err)=>{
       console.log(err)
     })
-  
   },[])
 
-  const handleAddCart=(el)=>{
-    // console.log(id,"data")
-    const {user} = JSON.parse(localStorage.getItem("eco-token"))
-    // console.log(user?._id);
-  
-          dispatch(postCart({userId: user?._id, productId:el._id, quantity: 1,image:el.image,productName:el.name,description:el.description}))
-          .then((res)=>{
-            console.log(res)
-            if(res.type==="CART_POST_SUCCESS")
-            {
-              toast({
-                title: 'Item Added Successful',
-                status: 'success',
-                duration: 3000,
-                isClosable: true,
-                position:"top"
-              })
-            }
-            else{
-              toast({
-                title: 'Item Already exists',
-                status: 'error',
-                duration: 3000,
-                isClosable: true,
-                position:"top"
-              })
-            }
-          }).catch((err)=>{
-            console.log(err)
-          })
-         }
+  const handleAddCart= async (el)=>{
+    const { image, name, _id: productId, description } = el;
+  console.log(productId);
+
+  const productToBeAdded = {
+    userId: UserId,
+    productId: productId,
+    image,
+    name,
+    description,
+  };
+
+  try {
+    // Adding the Item into the Cart:
+    if (localStorage.getItem('eco-token')){
+      const { data } = await axios.post(`${process.env.REACT_APP_BACKENED_URL}/carts/add`, productToBeAdded);
+
+      console.log(data);
+      if(data.message==="Product already exists in the cart.")
+      {
+        toast({
+          title: 'Product already exists',
+          status: 'error',
+          duration: 3000,
+          isClosable: true,
+          position:"top"
+        })
+      }
+      else{
+        toast({
+          title: 'Item Added Successful',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+          position:"top"
+        })
+      }
+    }
+   else{
+      return navigate("/login");
+    }
+ } catch (error) {
+    console.error("Error adding item to cart:", error);
+};
+ }
      
   if(load){
     return <Loading/>

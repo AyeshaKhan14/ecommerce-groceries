@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import "../Style/Nav.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { UserName } from "./UserName";
+import { UserId } from "../data/demo";
 
 export const Nav = ({ cartCount }) => {
   const user = useSelector((state) => state.AuthReducer.isAuth);

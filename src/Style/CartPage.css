@@ -4,7 +4,9 @@
     margin: auto;
     height:auto;
     display: flex;
-    gap:50px;
+    gap:80px;
+    margin-top: 10px;
+    margin-bottom: 5%;
 
 }
     /* cart section css */
@@ -19,7 +21,7 @@
     text-align: start;
     font-size: 20px;
     font-weight: 600;
-    margin-top: 15px;
+    margin-top: 11%;
 }
 .basket_item{
     display: flex;
@@ -27,17 +29,22 @@
     align-items: center;
     margin-top: 4%;
 }
-
+.basket_item>p{
+    font-weight: 600;
+    font-size: 22px;
+}
 /* data map css */
 
 .data_map_container{
     border:1px solid rgb(159, 155, 155);
-    border-top: none;
+    /* border-top: none;
     border-left: none;
-    border-right: none;
+    border-right: none; */
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
 }
 .image_constin_div{
     width:150px;
@@ -66,14 +73,16 @@
     width:100px;
 }
 .price_and_bttns>p{
-    text-align: start;
+    text-align: center;
     font-family: sans-serif;
+    font-weight: 600;
 }
 .remove_icons{
     /* border:1px solid red; */
     display: flex;
     justify-content: end;
     width:100px;
+    cursor: pointer;
 }
 .btn_plumin{
     display: flex;

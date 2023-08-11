@@ -3,51 +3,69 @@ import "../Style/CartPage.css"
 import { CartIcons } from '../Components/CartIcons'
 import axios from 'axios'
 import {RxCross1} from "react-icons/rx"
-import { useDispatch, useSelector } from 'react-redux'
-import { getCart, getDelete, patchCart } from '../Redux/CartReducer/action'
-import { user } from '../data/demo'
+import { useDispatch } from 'react-redux'
+import {  getDelete, patchCart, patchCartDec } from '../Redux/CartReducer/action'
+import { UserId } from '../data/demo'
+import {Link} from "react-router-dom"
 
 
 
 
 export const CartPage = () => {
-  
-    const [dal,setDal] = useState([])
+    const dispatch= useDispatch()
+    const [CartItems,setCartItems] = useState([])
+    const [dataUpdate, setdataUpdate] = useState({});
+    const [total,setTotal]= useState()
     const mrptotal=12
     const prdDisct=12
-    const totalAmt=19
-const dispatch= useDispatch()
-const [cart]= useSelector((state)=>state.CartReducer.cart)
-
-const data=cart?.products
-console.log(data,"cart")
+   
 
 
- 
+
+     const getCartItems = async () => {
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKENED_URL}/carts/${UserId}`);
+      setCartItems(data?.cart[0]?.products);
+      setTotal(data?.cart[0]?.amount)
+     // console.log(data?.cart[0]);
+       
+    };
+  
      useEffect(()=>{
-     
-        dispatch(getCart(user._id))
-    
-     },[])
+      getCartItems()
+      
+     },[dataUpdate])
    
 
      const handleDelete=(id)=>{ 
-      console.log(id,"prdoID")
       dispatch(getDelete(id))
+      .then((res)=>{
+        getCartItems()
+      }).catch((err)=>{
+        console.log(err)
+      })
+     
 
-     }
-     const handleAddPlus=(id,count)=>{
-      console.log(count,"count")
-        dispatch(patchCart({userId:user?._id,productId:id}))
+  }
+
+
+     const handleAddPlus=(id)=>{
+        dispatch(patchCart({userId:UserId,productId:id}))
         .then((res)=>{
-          dispatch(getCart())
+          setdataUpdate(res)
+          getCartItems()
         }).catch((err)=>{
           console.log(err)
         })
      }
 
      const handledecmin=(id)=>{
-
+      dispatch(patchCartDec({userId:UserId,productId:id}))
+      .then((res)=>{
+        setdataUpdate(res)
+        getCartItems()
+      }).catch((err)=>{
+        console.log(err)
+      })
      }
 
 
@@ -57,30 +75,29 @@ console.log(data,"cart")
         <div className='cart_section'>
            <div className='my_cart_div'>My Cart</div>
            <div className='basket_item'>
-            <p>Basket (items)</p>
-            <p>{totalAmt}</p>
+            <p>Basket ({CartItems.length} items)</p>
+            <p>Rs {total}</p>
            </div>
          
          {/* data map */}
        
-            {data?.map((el)=>{
+            {CartItems?.map((el)=>{
                 return <div className='data_map_container' key={el._id}>
                        <div className='image_constin_div'>
-                        <img src={el.image}/>
+                        <img src={el.image} alt=""/>
                        </div>
                        <div className='disctiptn_div'>
-                        <p>{el.description}</p> 
-                       <p className='sols'>Sold :{el.sold}</p> 
+                        <p>{el.description}</p>  
                        </div>
                        <div className='price_and_bttns'>
-                        <p>Price{el.price}</p>
+                        <p>Price {el.price}</p>
                         <div className='btn_plumin'>
-                            <button onClick={()=>handleAddPlus(el._id,el.count)}>+</button>
+                            <button onClick={()=>handleAddPlus(el.productId,el.count)}>+</button>
                             <p>{el.count}</p>
-                            <button onClick={()=>handledecmin(el._id)}>-</button>
+                            <button disabled={el.count<=1} onClick={()=>handledecmin(el.productId)}>-</button>
                         </div>
                        </div>
-                       <div className='remove_icons' onClick={()=>handleDelete(el._id)} >{<RxCross1/>}</div>
+                       <div className='remove_icons' onClick={()=>handleDelete(el.productId)} >{<RxCross1/>}</div>
                 </div>
             })}
       
@@ -95,11 +112,11 @@ console.log(data,"cart")
 
                  <div className='mrp_price'><h3>MRP Total</h3> <h3>₹{mrptotal}</h3></div>
                  <div className='product_discount'><h3>Product Discount</h3><h3>₹{prdDisct}</h3></div>
-                 <div className='total_amount'><h3>Total Amount</h3><h3>₹{totalAmt}</h3></div>
+                 <div className='total_amount'><h3>Total Amount</h3><h3>₹{total}</h3></div>
 
                </div>
                <div className='button_div'>
-                <button>Place Order</button>
+                <button><Link to="/CheckoutPage">Place Order</Link></button>
                </div>
             </div>
         </div>

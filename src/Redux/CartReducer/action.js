@@ -1,7 +1,10 @@
+import { UserId } from "../../data/demo"
 import * as types from "./actionType"
 import axios from "axios"
-import {user} from "../../data/demo"
-const Api=`https://ecom-backend-wdkk.onrender.com`
+// import {user} from "../../data/demo"
+
+
+export const Api=`https://ecom-backend-wdkk.onrender.com`
 
 export const postCart=(data)=>(dispatch)=>{
     dispatch({type:types.CART_POST_REQUEST})
@@ -29,7 +32,7 @@ export const getCart=(id)=>(dispatch)=>{
 export const getDelete=(id)=>(dispatch)=>{
     console.log(id,"dele")
     dispatch({type:types.CART_DELETE_REQUEST})
-   return axios.delete(`${Api}/carts/delete/${user?._id}/${id}`)
+   return axios.delete(`${Api}/carts/delete/${UserId}/${id}`)
    .then((res)=>{
    return dispatch({type:types.CART_DELETE_SUCCESS,payload:res.data})
    }).catch((err)=>{
@@ -38,9 +41,19 @@ export const getDelete=(id)=>(dispatch)=>{
 }
 
 export const patchCart=(data)=>(dispatch)=>{
-    console.log(data,"qq")
     dispatch({type:types.CART_PATCH_REQUEST})
     return axios.patch(`${Api}/carts/update/increment`,data)
+    .then((res)=>{
+        return dispatch({type:types.CART_PATCH_SUCCESS,payload:res.data})
+    }).catch((err)=>{
+        return dispatch({type:types.CART_PATCH_FAILURE})
+    })
+
+}
+
+export const patchCartDec=(data)=>(dispatch)=>{
+    dispatch({type:types.CART_PATCH_REQUEST})
+    return axios.patch(`${Api}/carts/update/decrement`,data)
     .then((res)=>{
         return dispatch({type:types.CART_PATCH_SUCCESS,payload:res.data})
     }).catch((err)=>{

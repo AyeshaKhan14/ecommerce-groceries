@@ -9,7 +9,7 @@ import { ProductSlider } from "../Components/ProductSlider";
 
 export const Home = () => {
   return (
-    <div style={{maxHeight:"100%",marginBottom:"10px"}}>
+    <div style={{maxHeight:"100%",marginBottom:"5%",marginTop:"3%", width:"100%"}}>
       <Carousel />
       <TitleBar text="Grab The Best Deal On Wednesday" color="Black"/>
       <Banner img_link="banner1"/>

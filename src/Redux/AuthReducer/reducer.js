@@ -1,14 +1,14 @@
 import * as types from "./actionType"
 
-// const x=JSON.parse(localStorage.getItem("eco-token")) || {}
-// // console.log(x,"obj")
-// let Auth=Object.keys(x).length>0 ? true : false
+const x=JSON.parse(localStorage.getItem("eco-token")) || {}
+// console.log(x,"obj")
+let Auth=Object.keys(x).length>0 ? true : false
 
 const initState={
-    isAuth:false,
+    isAuth:Auth,
     isLoading:false,
     isErr:false,
-    userDetails:{},
+    userDetails:x,
     token:[]
 }
 

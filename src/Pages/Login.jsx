@@ -82,11 +82,11 @@ export const Login = () => {
                 <div className='oneDiv'>
                 <h1>Log in</h1>
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <input placeholder='Enter email' type="text" name="email" value={user.email} onChange={handleChange} />
+                    <div className='input_input'>
+                        <input className='inputsbtn'  placeholder='Enter email' type="text" name="email" value={user.email} onChange={handleChange} />
                     </div>
-                    <div>
-                        <input placeholder='Enter password' type="password" name="password" value={user.password} onChange={handleChange} />
+                    <div className='input_input'>
+                        <input  placeholder='Enter password' type="password" name="password" value={user.password} onChange={handleChange} />
                     </div>
                     <button type="submit" className='butn'>LOGIN</button>
                     <div className="span-div">

@@ -9,24 +9,30 @@ import axios from 'axios'
 
 export const ProductSlider = () => {
   const [products, setProducts] = useState([]);
+  const [load,setLoad]= useState(false)
+
+  const getItem=()=>{
+    setLoad(true)
+    axios.get(`https://ecom-backend-wdkk.onrender.com/products/all`)
+    .then((res)=>{
+      // console.log(res.data.products,"data")
+      setProducts(res.data.products)
+      setLoad(false)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
+
 
   useEffect(() => {
-    async function getResults() {
-      const results = await axios(
-        "https://ecom-backend-wdkk.onrender.com/products/all"
-      );
-      setProducts(results.data.products);
-      console.log(results.data.products);
-    }
-    getResults();
+    getItem()
   }, []);
-  const product = products.map((item) => (
-    <Product
-      name={item.name}
-      url={item.image}
-      price={item.price}
-      description={item.description}
-    />
+
+
+
+
+  const product = products.map((el) => (
+    <Product el={el} />
   ));
   return (
     <div>

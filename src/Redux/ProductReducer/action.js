@@ -12,4 +12,3 @@ export const getProduct=()=>(dispatch)=>{
     })
 }
 
-export const api = "https://ecom-backend-wdkk.onrender.com/products/all/cagegory"
